@@ -1,15 +1,43 @@
-Source: template-repository
-Section: unknown
+Source: gocc
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Stephen Kitt <skitt@debian.org>
+Section: golang
+Testsuite: autopkgtest-pkg-go
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13),
+               dh-golang,
+               golang-any:native,
+               golang-golang-x-mod-dev
+Standards-Version: 4.6.2
+Vcs-Browser: https://salsa.debian.org/go-team/packages/gocc
+Vcs-Git: https://salsa.debian.org/go-team/packages/gocc.git
+Homepage: https://github.com/goccmack/gocc
+Rules-Requires-Root: no
+XS-Go-Import-Path: github.com/goccmack/gocc
 
-Package: template-repository
+Package: gocc
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Built-Using: ${misc:Built-Using}
+Description: Go lexer and parser generator
+ Gocc generates lexer-parser pairs or stand-alone DFAs or parsers from
+ a Backus-Naur form (BNF). The generated lexers are deterministic
+ finite automata (DFAs), recognising regular languages. The generated
+ parsers are pushdown automata (PDAs), recognising LR(1) languages.
+ Optional LR(1) conflict handling automatically resolves shift/reduce
+ and reduce/reduce conflicts.
+
+Package: golang-github-goccmack-gocc-dev
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Go lexer and parser generator (library)
+ Gocc generates lexer-parser pairs or stand-alone DFAs or parsers from
+ a Backus-Naur form (BNF). The generated lexers are deterministic
+ finite automata (DFAs), recognising regular languages. The generated
+ parsers are pushdown automata (PDAs), recognising LR(1) languages.
+ Optional LR(1) conflict handling automatically resolves shift/reduce
+ and reduce/reduce conflicts.
+ .
+ This package provides Gocc as a Go library.

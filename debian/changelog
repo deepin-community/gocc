@@ -1,5 +1,19 @@
-template-repository (1.0-1) unstable; urgency=medium
+gocc (0.0~git20230228.2292f9e-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream snapshot.
+  * Use the native Go compiler.
+  * Standards-Version 4.6.2, no change required.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Stephen Kitt <skitt@debian.org>  Sun, 01 Oct 2023 17:00:55 +0200
+
+gocc (0.0~git20211213.7ea6993-1) unstable; urgency=medium
+
+  * Source-only upload after NEW.
+
+ -- Stephen Kitt <skitt@debian.org>  Sat, 12 Mar 2022 11:57:48 +0100
+
+gocc (0.0~git20211213.7ea6993-1~exp1) experimental; urgency=medium
+
+  * Initial release. Closes: #1006886.
+
+ -- Stephen Kitt <skitt@debian.org>  Tue, 08 Mar 2022 19:29:24 +0100
