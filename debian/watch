@@ -1,0 +1,5 @@
+version=4
+# gocc has tags but they don't match the Go module version
+opts="mode=git, pgpmode=none" \
+https://github.com/goccmack/gocc/ \
+HEAD debian uupdate

@@ -1,4 +1,12 @@
 #!/usr/bin/make -f
 
+export DH_GOLANG_INSTALL_EXTRA := internal/test/t2/t2.bnf
+
 %:
-	dh $@
+	dh $@ --builddirectory=_build --buildsystem=golang --with=golang
+
+execute_after_dh_install:
+	find $(CURDIR)/debian -name '*.go' -exec chmod 644 {} +
+
+override_dh_auto_test:
+	PATH=$(CURDIR)/_build/bin:$$PATH dh_auto_test
